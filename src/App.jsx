@@ -174,7 +174,32 @@ const App = () => {
 
       <main className="calculator liquid-glass" ref={calcRef}>
         
-        <header className="calc-header">
+      <header className="calc-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
+          
+          {/* 1. THE BULLETPROOF BRAND BADGE */}
+          <div className="brand" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div 
+              className="brand-badge" 
+              style={{ 
+                backgroundColor: '#2563eb', 
+                color: '#ffffff', 
+                width: '32px', 
+                height: '32px', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                borderRadius: '8px', 
+                fontWeight: '700', 
+                fontSize: '1rem',
+                boxShadow: '0 4px 10px rgba(37, 99, 235, 0.4)'
+              }}
+            >
+              W.
+            </div>
+            <span style={{ fontWeight: '600', fontSize: '1.1rem', color: 'rgba(255, 255, 255, 0.9)' }}>Calc Pro</span>
+          </div>
+
+          {/* 2. THE MODE TOGGLES */}
           <div className="mode-toggles">
             <button className={`toggle-btn ${mode === 'standard' ? 'active' : ''}`} onClick={() => setMode('standard')}>
               <Calculator size={16} /> Standard
@@ -183,6 +208,8 @@ const App = () => {
               <FlaskConical size={16} /> Scientific
             </button>
           </div>
+
+          {/* 3. THE HISTORY BUTTON */}
           <button className={`history-toggle ${showHistory ? 'active' : ''}`} onClick={() => setShowHistory(!showHistory)}>
             <History size={20} />
           </button>
